@@ -24,4 +24,27 @@ public class TaskController {
         return taskRepository.save(task);
 
     }
+
+    @GetMapping("/{id}")
+    public Task getTaskById(@PathVariable Long id){
+        return taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+    }
+
+    @PutMapping("/{id}")
+    public Task updateTask(@PathVariable Long id, @RequestBody Task taskDetails){
+        Task task = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+        task.setTitle(taskDetails.getTitle());
+        task.setDescription(taskDetails.getDescription());
+        task.setStatus(taskDetails.getStatus());
+        task.setDueDate(taskDetails.getDueDate());
+        return taskRepository.save(task);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteTask(@PathVariable Long id){
+        Task task = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+        taskRepository.delete(task);
+        return "Task deleted successfully";
+    }
+
 }
