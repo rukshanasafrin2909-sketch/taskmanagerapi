@@ -1,5 +1,7 @@
 package com.example.taskmanagerapi;
 
+import com.example.taskmanagerapi.entity.Task;
+import com.example.taskmanagerapi.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

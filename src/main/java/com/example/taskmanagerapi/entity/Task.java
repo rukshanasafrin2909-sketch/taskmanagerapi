@@ -1,4 +1,4 @@
-package com.example.taskmanagerapi;
+package com.example.taskmanagerapi.entity;
 
 import jakarta.persistence.*;
 
