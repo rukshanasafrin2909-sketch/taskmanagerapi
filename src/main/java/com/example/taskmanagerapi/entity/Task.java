@@ -9,7 +9,10 @@ import java.time.LocalDateTime;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long taskId;
+
+    @Column(nullable = false)
+    private Long userId;
 
     @Column(nullable = false)
     private String title;
@@ -31,20 +34,29 @@ public class Task {
     }
 
     //Parameterised constructor
-    public Task(String title, String description, String status){
+    public Task(String title, String description, String status, Long userId){
         this.title = title;
         this.description = description;
         this.status = status;
+        this.userId = userId;
         this.createdDate = LocalDateTime.now();
     }
 
     //Getters abd Setters
-    public Long getId() {
-        return id;
+    public Long getTaskId() {
+        return taskId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTaskId(Long id) {
+        this.taskId = taskId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getTitle() {
