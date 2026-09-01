@@ -1,4 +1,4 @@
-package com.example.taskmanagerapi;
+package com.example.taskmanagerapi.controller;
 
 import com.example.taskmanagerapi.entity.Task;
 import com.example.taskmanagerapi.repository.TaskRepository;
