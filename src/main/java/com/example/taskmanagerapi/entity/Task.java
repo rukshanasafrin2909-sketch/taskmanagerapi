@@ -47,7 +47,7 @@ public class Task {
         return taskId;
     }
 
-    public void setTaskId(Long id) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 
